@@ -16,3 +16,8 @@ Call from bank 0/1 to bank 2 (no arguments, but you can dig on the stack and rea
   #include "test_funcs.h"
   ...
   _asm call ADDR_TEST __endasm;
+
+Dependencies:
+  - linux (for scripts)
+  - sjasm (for resources.asm)
+  - sdcc (for everything else)
