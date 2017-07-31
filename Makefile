@@ -25,7 +25,7 @@ compile: megarom.rel main.rel variables.rel test.rel
 	sjasm -s src/resources.asm
 	mv src/resources.out resources.bin
 
-  # build page 50..63 - code
+	# build page 50..63 - code
 	sdcc $(CCFLAGS) --code-loc 0x8000 --data-loc 0xc000 test.rel variables.rel
 	makebin -s 65535 < test.ihx > test.bin
 	dd if=test.bin of=test_page2.bin bs=1 skip=$(PAGE2_START)
