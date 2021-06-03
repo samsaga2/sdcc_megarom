@@ -11,3 +11,4 @@
 *.mem
 *.bin
 *.out
+build/
