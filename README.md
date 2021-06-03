@@ -1,6 +1,12 @@
 How it works?
 =============
 
+Tools
+-----
+
+- SDCC 4.1.0
+- gcc (for makerom)
+
 Functions
 ---------
 
@@ -44,7 +50,7 @@ Compiling header
 ----------------
 
 Obviously you need the megarom header and init code:
-> `sdasz80 -o megarom.rel src/megarom.s'
+> `sdasz80 -o megarom.rel src/megarom.s`
 
 Linking
 -------
