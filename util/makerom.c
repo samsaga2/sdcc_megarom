@@ -16,16 +16,13 @@ void init_rom() {
     memset(rom, sizeof(rom), 1);
 }
 
-void set_data(int count, int addr, char* data) {
-    int page_offset = (addr & 0xffff) - 0x4000;
-    int page_num = addr >> 16;
-    int dst_addr = page_num * 0x8000 + page_offset;
-    if(addr >= 0xc000 && addr <=0xffff)
-        return;
+void set_data(int count, int page_num, int bank_addr, char* data) {
+    int rom_offset = page_num * 0x2000 + (bank_addr & 0x1fff);
+
     #ifdef DEBUGINFO
-    printf("addr %5x data %s - rom addr %6x\n", addr, data, dst_addr);
+    printf("addr 0x%05x - page %2d - rom addr 0x%06x - data %s\n", bank_addr, page_num, rom_offset, data);
     #endif
-    char *rom_ptr = &rom[dst_addr];
+    char *rom_ptr = &rom[rom_offset];
     do {
         int byte;
         sscanf(data, "%2x", &byte);
@@ -44,13 +41,10 @@ void compile(const char* filename) {
         fscanf(in, ":%2x%4x%2x%s\n", &count, &addr, &type, data);
         switch(type) {
         case TYPE_DATA:
-            set_data(count, addr + segment*0x10000, data);
+            set_data(count, segment, addr, data);
             break;
         case TYPE_SET_SEGMENT:
             sscanf(data+2, "%2x", &segment);
-            #ifdef DEBUGINFO
-            printf("set segment %d\n", segment);
-            #endif
             break;
         case TYPE_END:
             break;

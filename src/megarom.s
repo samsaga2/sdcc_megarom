@@ -5,6 +5,40 @@
 .globl s__INITIALIZED
 .globl s__INITIALIZER
 
+.area _BANK0
+.area _BANK2
+.area _BANK4
+.area _BANK6
+.area _BANK8
+.area _BANK10
+.area _BANK12
+.area _BANK14
+.area _BANK16
+.area _BANK18
+.area _BANK20
+.area _BANK22
+.area _BANK24
+.area _BANK26
+.area _BANK28
+.area _BANK30
+.area _BANK32
+.area _BANK34
+.area _BANK36
+.area _BANK38
+.area _BANK40
+.area _BANK42
+.area _BANK44
+.area _BANK46
+.area _BANK48
+.area _BANK50
+.area _BANK52
+.area _BANK54
+.area _BANK56
+.area _BANK58
+.area _BANK60
+.area _BANK62
+.area _BANK64
+
 .area _HEADER (ABS)
 
 ;; megarom header
