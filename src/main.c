@@ -1,16 +1,16 @@
-#include "bank1.h"
+#include "test.h"
 
-void chput(char c) {
+void chgmod(char c) {
     __asm
     ld iy,#2
     add iy,sp
     ld a,0(iy)
-    call 0x00a2
+    call 0x005f
     __endasm;
 }
 
-void main() __banked {
-    char a = test_func(65, 1);
-    chput(a);
+void main() {
+    chgmod(0);
+    print_hello();
     while(1);
 }

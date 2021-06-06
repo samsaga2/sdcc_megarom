@@ -1,3 +1,20 @@
+How to compile?
+===============
+
+Dependencies:
+- Linux
+- gcc
+- sdcc 4.1
+
+Compile command:
+`make`
+
+Test pages
+==========
+
+Pages 0&1 are fixed, never changes.
+Pages 2&3 always change together.
+
 How it works?
 =============
 
@@ -76,4 +93,3 @@ To create the rom:
 `./build/makerom main.ihx main.rom`
 
 The _makerom_ program will the the generated Intel HEX file and it will create a megarom file.
-

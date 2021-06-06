@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+/* #define DEBUGINFO */
+
 enum {
     TYPE_DATA = 0,
     TYPE_END = 1,
@@ -20,7 +22,9 @@ void set_data(int count, int addr, char* data) {
     int dst_addr = page_num * 0x8000 + page_offset;
     if(addr >= 0xc000 && addr <=0xffff)
         return;
-    //printf("addr %5x data %s - rom addr %6x\n", addr, data, dst_addr);
+    #ifdef DEBUGINFO
+    printf("addr %5x data %s - rom addr %6x\n", addr, data, dst_addr);
+    #endif
     char *rom_ptr = &rom[dst_addr];
     do {
         int byte;
@@ -44,7 +48,9 @@ void compile(const char* filename) {
             break;
         case TYPE_SET_SEGMENT:
             sscanf(data+2, "%2x", &segment);
-            //printf("set segment %d\n", segment);
+            #ifdef DEBUGINFO
+            printf("set segment %d\n", segment);
+            #endif
             break;
         case TYPE_END:
             break;

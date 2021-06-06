@@ -1,4 +1,3 @@
-.globl b_main
 .globl _main
 .globl l__DATA
 .globl s__DATA
@@ -21,15 +20,11 @@
 .dw  0x0000
 
 init:
-        ld      sp,(0xfc4a) ; Stack at the top of memory.
-        call    gsinit ; Initialise global variables
-        call    megarom
-
-        ld e,#b_main
-        ld hl,#_main
-        call ___sdcc_bcall_ehl
-
-        call    #0x0000; call CHKRAM
+        ld   sp,(0xfc4a) ; Stack at the top of memory.
+        call gsinit ; Initialise global variables
+        call megarom
+        call _main
+        call #0x0000; call CHKRAM
 
 megarom::
         ;; locate 32k
@@ -67,8 +62,10 @@ megarom::
         ret
 
 ;;set_bank::
-	;;ld (#0x7000),a
+	;;ld (#0x9000),a
 	;;ld (#_curr_bank),a
+        ;; inc a
+	;; ld (#0xb000),a
         ;;ret
 
 ;;get_bank::
@@ -146,15 +143,19 @@ ___sdcc_bcall_abc::
         dec     sp
         pop     af
         ;;jp      set_bank
-	ld (#0x7000),a
+	ld (#0x9000),a
 	ld (#_curr_bank),a
+        inc a
+	ld (#0xb000),a
 	ret
 
 ;
 ___sdcc_bjump_abc:
         ;;call    set_bank        ;set current bank to A, other registers expected to be unchanged
-	ld (#0x7000),a
+	ld (#0x9000),a
 	ld (#_curr_bank),a
+        inc a
+	ld (#0xb000),a
         push    bc
         ret
 ;
@@ -173,16 +174,20 @@ ___sdcc_bcall_ehl::
         dec     sp
         pop     af
         ;;jp      set_bank
-	ld (#0x7000),a
+	ld (#0x9000),a
 	ld (#_curr_bank),a
+        inc a
+	ld (#0xb000),a
 	ret
 
 ;
 ___sdcc_bjump_ehl:
         ld      a, e
         ;;call    set_bank
-	ld (#0x7000),a
+	ld (#0x9000),a
 	ld (#_curr_bank),a
+        inc a
+	ld (#0xb000),a
         jp      (hl)
         
 
