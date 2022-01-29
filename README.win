@@ -1,0 +1,20 @@
+Build
+=====
+
+Call in the main folder:
+```
+build_win\build.bat
+```
+
+A main.rom will be generated in the output build folder.
+
+Add source code file
+====================
+
+Add a file at the build_win\build.bat like:
+```
+sdcc %CCFLAGS% --codeseg BANK2 --code-size %BANKn_SIZE% -c ..\src\module.c
+```
+
+Where module.c is your source code file and BANK2 is your megarom bank index.
+
