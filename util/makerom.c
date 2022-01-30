@@ -21,7 +21,7 @@ void init_rom() {
 }
 
 void set_data(int count, int page_num, int bank_addr, char* data) {
-    int rom_offset = page_num * 0x2000 + (bank_addr & 0x1fff);
+    int rom_offset = page_num * 0x2000 + (bank_addr & 0x3fff);
 
     #ifdef DEBUGINFO
     printf("addr 0x%05x - page %2d - rom addr 0x%06x - data %s\n", bank_addr, page_num, rom_offset, data);
