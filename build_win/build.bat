@@ -45,6 +45,7 @@ cd build
 sdasz80 -o megarom.rel ..\src\megarom.s
 sdcc %CCFLAGS% --codeseg BANK0 --code-size %BANK0_SIZE% -c ..\src\main.c
 sdcc %CCFLAGS% --codeseg BANK2 --code-size %BANKn_SIZE% -c ..\src\test.c
-sdcc %CCFLAGS% -o main.ihx --data-loc %RAM_ADDR% %BANKS_ADDR% megarom.rel main.rel test.rel
+sdcc %CCFLAGS% --codeseg BANK4 --code-size %BANKn_SIZE% -c ..\src\test_rev.c
+sdcc %CCFLAGS% -o main.ihx --data-loc %RAM_ADDR% %BANKS_ADDR% megarom.rel main.rel test.rel test_rev.rel
 ..\build_win\makerom.exe main.ihx main.rom
 cd ..
