@@ -1,8 +1,10 @@
 #include "test.h"
 
-void putch(char c) {
+
+void putch(char c) __naked {
+	c;
     __asm
-    call 0x00a2
+    jp 0x00a2
     __endasm;
 }
 
@@ -12,6 +14,6 @@ void print(char* c) {
     } while(*c++);
 }
 
-void print_hello() __banked {
-    print("Hello world");
+void print_hello() __banked  {
+    print("Hello world from bank2-3 \r\n");
 }

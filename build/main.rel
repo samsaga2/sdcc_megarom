@@ -1,0 +1,38 @@
+XL3
+H A areas 8 global symbols
+M main
+O -mz80
+S b_print_hello_rev Ref000000
+S .__.ABS. Def000000
+S b_print_hello Ref000000
+S _print_hello_rev Ref000000
+S ___sdcc_bcall_ehl Ref000000
+S _print_hello Ref000000
+A _CODE size 0 flags 0 addr 0
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _BANK0 size 1A flags 0 addr 0
+S _main Def000003
+S _chgmod Def000000
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 07 00
+T 00 00 00 C3 5F 00
+R 00 00 07 00
+T 03 00 00
+R 00 00 07 00
+T 03 00 00 AF CD 00 00 1E 00 00 00 21 00 00 CD
+R 00 00 07 00 00 05 07 00 0B 08 02 00 02 0C 05 00
+T 0D 00 00 00 00 1E 00 00 00 21 00 00 CD
+R 00 00 07 00 02 03 04 00 0B 06 00 00 02 0A 03 00
+T 15 00 00 00 00
+R 00 00 07 00 02 03 04 00
+T 17 00 00
+R 00 00 07 00
+T 17 00 00 C3 17 00
+R 00 00 07 00 00 04 07 00
