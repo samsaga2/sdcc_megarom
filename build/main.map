@@ -1,0 +1,221 @@
+ASxxxx Linker V03.00 + NoICE + sdld,  page 1.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000000  .__.ABS.                           test_rev
+     00000000  l__BANK10                       
+     00000000  l__BANK12                       
+     00000000  l__BANK14                       
+     00000000  l__BANK16                       
+     00000000  l__BANK18                       
+     00000000  l__BANK20                       
+     00000000  l__BANK22                       
+     00000000  l__BANK24                       
+     00000000  l__BANK26                       
+     00000000  l__BANK28                       
+     00000000  l__BANK30                       
+     00000000  l__BANK32                       
+     00000000  l__BANK34                       
+     00000000  l__BANK36                       
+     00000000  l__BANK38                       
+     00000000  l__BANK40                       
+     00000000  l__BANK42                       
+     00000000  l__BANK44                       
+     00000000  l__BANK46                       
+     00000000  l__BANK48                       
+     00000000  l__BANK50                       
+     00000000  l__BANK52                       
+     00000000  l__BANK54                       
+     00000000  l__BANK56                       
+     00000000  l__BANK58                       
+     00000000  l__BANK6                        
+     00000000  l__BANK60                       
+     00000000  l__BANK62                       
+     00000000  l__BANK64                       
+     00000000  l__BANK8                        
+     00000000  l__CABS                         
+     00000000  l__CODE                         
+     00000000  l__DABS                         
+     00000000  l__GSFINAL                      
+     00000000  l__GSINIT                       
+     00000000  l__HEADER                       
+     00000000  l__HOME                         
+     00000000  l__INITIALIZED                  
+     00000000  l__INITIALIZER                  
+     00000000  s__CABS                         
+     00000000  s__DABS                         
+     00000000  s__HEADER                       
+     00000000  s__HEADER0                      
+     00000002  b_print_hello                      test
+     00000002  l__DATA                         
+     00000004  b_print_hello_rev                  test_rev
+     0000001A  l__BANK0                        
+     00000032  l__BANK2                        
+     00000033  l__BANK4                        
+ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000C5  l__HEADER0                      
+     00000200  s__CODE                         
+     00004100  s__BANK0                        
+     0000C000  s__DATA                         
+     0000C002  s__GSFINAL                      
+     0000C002  s__GSINIT                       
+     0000C002  s__HOME                         
+     0000C002  s__INITIALIZED                  
+     0000C002  s__INITIALIZER                  
+     00028000  s__BANK2                        
+     00048000  s__BANK4                        
+     00068000  s__BANK6                        
+     00088000  s__BANK8                        
+     000A8000  s__BANK10                       
+     000C8000  s__BANK12                       
+     000E8000  s__BANK14                       
+     00108000  s__BANK16                       
+     00128000  s__BANK18                       
+     00148000  s__BANK20                       
+     00168000  s__BANK22                       
+     00188000  s__BANK24                       
+     001A8000  s__BANK26                       
+     001C8000  s__BANK28                       
+     001E8000  s__BANK30                       
+     00208000  s__BANK32                       
+     00228000  s__BANK34                       
+     00248000  s__BANK36                       
+     00266000  s__BANK38                       
+     00288000  s__BANK40                       
+     002A8000  s__BANK42                       
+     002C8000  s__BANK44                       
+     002E8000  s__BANK46                       
+     00308000  s__BANK48                       
+     00328000  s__BANK50                       
+     00348000  s__BANK52                       
+     00368000  s__BANK54                       
+     00388000  s__BANK56                       
+     003A8000  s__BANK58                       
+     003C8000  s__BANK62                       
+     003C8000  s__BANK64                       
+     003E8000  s__BANK60                       
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_BANK0                              00004100    0000001A =          26. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00004100  _chgmod                            main
+     00004103  _main                              main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_BANK2                              00028000    00000032 =          50. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00028000  _putch                             test
+     00028003  _print                             test
+     00028010  _print_hello                       test
+ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_BANK4                              00048000    00000033 =          51. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00048000  _putch_rev                         test_rev
+     00048003  _print_rev                         test_rev
+     00048010  _print_hello_rev                   test_rev
+ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_HEADER0                            00000000    000000C5 =         197. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00004020  megarom                            
+     00004050  gsinit                             
+     00004076  ___sdcc_bcall                      
+     0000407F  ___sdcc_bcall_abc                  
+     000040A4  ___sdcc_bcall_ehl                  
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_DATA                               0000C000    00000002 =           2. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000C000  _curr_bank                         
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
+
+Files Linked                              [ module(s) ]
+
+megarom.rel                               [  ]
+main.rel                                  [ main ]
+test.rel                                  [ test ]
+test_rev.rel                              [ test_rev ]
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
+
+User Base Address Definitions
+
+_CODE = 0x0200
+_DATA = 0xc000
+_BANK0=0x04100
+_BANK2=0x28000
+_BANK4=0x48000
+_BANK6=0x68000
+_BANK8=0x88000
+_BANK10=0x0a8000
+_BANK12=0x0c8000
+_BANK14=0x0e8000
+_BANK16=0x108000
+_BANK18=0x128000
+_BANK20=0x148000
+_BANK22=0x168000
+_BANK24=0x188000
+_BANK26=0x1a8000
+_BANK28=0x1c8000
+_BANK30=0x1e8000
+_BANK32=0x208000
+_BANK34=0x228000
+_BANK36=0x248000
+_BANK38=0x266000
+_BANK40=0x288000
+_BANK42=0x2a8000
+_BANK44=0x2c8000
+_BANK46=0x2e8000
+_BANK48=0x308000
+_BANK50=0x328000
+_BANK52=0x348000
+_BANK54=0x368000
+_BANK56=0x388000
+_BANK58=0x3a8000
+_BANK60=0x3e8000
+_BANK62=0x3c8000
+
+
