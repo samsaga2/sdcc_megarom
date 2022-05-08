@@ -14,14 +14,24 @@ enum {
     TYPE_SET_SEGMENT = 4
 };
 
-char rom[512 * 1024];
+#define NUM_PAGES 64
+#define PAGE_SIZE 0x2000 // if you change this, you must modify set_data
+
+char rom[NUM_PAGES * PAGE_SIZE];
+int  used_page_space[NUM_PAGES] = {0};
 
 void init_rom() {
     memset(rom, sizeof(rom), 1);
 }
 
 void set_data(int count, int page_num, int bank_addr, char* data) {
-    int rom_offset = page_num * 0x2000 + (bank_addr & 0x3fff);
+    used_page_space[page_num] += count;
+    if(PAGE_SIZE*2-used_page_space[page_num]<0) {
+        printf("rom page %d is full\n", page_num);
+        exit(1);
+    }
+    
+    int rom_offset = page_num * PAGE_SIZE + (bank_addr & 0x3fff);
 
     #ifdef DEBUGINFO
     printf("addr 0x%05x - page %2d - rom addr 0x%06x - data %s\n", bank_addr, page_num, rom_offset, data);
@@ -66,6 +76,22 @@ void save_rom(const char* filename) {
     fclose(out);
 }
 
+void show_used_space() {
+    printf("page | used | free\n");
+    printf("-----+------+-----\n");
+    int total_used = 0;
+    int total_free = NUM_PAGES * PAGE_SIZE;
+    for(int i = 0; i < NUM_PAGES; i++)
+        if(used_page_space[i] > 0) {
+            int page_free = PAGE_SIZE*2-used_page_space[i];
+            total_used += used_page_space[i];
+            total_free -= used_page_space[i];
+            printf("  %02x | %04x | %04x\n", i, used_page_space[i], page_free);
+        }
+    printf("total used %d bytes\n", total_used);
+    printf("total free %d bytes\n", total_free);
+}
+
 int main(int argc, const char** argv) {
     if(argc < 2) {
         return 1;
@@ -74,6 +100,7 @@ int main(int argc, const char** argv) {
     init_rom();
     compile(argv[1]);
     save_rom(argv[2]);
+    show_used_space();
 
     return 0;
 }
